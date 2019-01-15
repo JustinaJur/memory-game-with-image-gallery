@@ -9,9 +9,11 @@
 </head>
 <body>
 
+<div class="wrapper">
+
 <h1>Discover History of Vilnius</h1>
 	
-<div> 
+<nav> 
   <button onclick = "reset()" id="newgame">new game</button>
   <span id="gap"> </span>
   <span class="redFlag">Select a topic:</span>
@@ -19,12 +21,12 @@
   <button id="bridges" class="topic">bridges</button>
   <button id="restaurants" class="topic">restaurants</button>
   <button id="transport" class="topic">transport</button>
-</div>
+</nav>
  
  
  <div class="announcement hidden"> 
   Congratulations!<br>
-  Click on an image to explore the gallery
+  Click on an image to explore the gallery.
  </div>
  
  
@@ -38,11 +40,6 @@
   </div>
  </div>
 
-  
-  
-  
-  
-  
 
 <div id="container">  
   <img  class="pics" id=0>
@@ -59,7 +56,7 @@
   <img  class="pics" id=11> 
 </div>
   
- 
+</div> 
 
 
 <script type="text/javascript" src="memoryGame.js" >	

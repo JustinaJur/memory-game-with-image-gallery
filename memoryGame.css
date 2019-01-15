@@ -1,36 +1,59 @@
+* {
+   box-sizing: border-box;
+}
 body{
 	margin: 0;
 	background-color: #232323;
 	text-align: center;
-
 }
-
 h1{	
 	text-align: center;
 	font-family: 'Acme', sans-serif;
 	color: #c7d9e8;
 	padding: 20px;
-	margin-bottom: 0;
+	margin: 0;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 500;
 	font-family: Courier New;
 }
-img{
+#container {
+    display: flex;	
+    flex-flow: row wrap;
+	margin: 10px auto;
+	max-width: 75%;
+    height: auto;
+}
+.pics{
 	width: 15%;
-	height:  100px;
-	float: left;
-	margin: 0.83%;
+	height: 100px;
 	border-radius: 7px;
-	transition: 5.0s;
+	margin: 0.8%;
 	background-image: url("images/white.jpg");
+	background-size: cover;
 	cursor: pointer;
 	user-select: none;
+}
+button{
+	padding: 5px;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	height: 100%;
+	font-weight: 600;
+	color: #4682b4;
+	transition: all 0.3s;
+}
+button:hover {
+	color: white;
+	background: #4682b4;
+	border-radius: 4px;	
 }
 
 #gap{
 	display: inline-block;
-	width: 10%;
+	width: 7%;
 }
 .redFlag{
 	color: red;
@@ -42,30 +65,18 @@ color:white;
 border-radius: 4px;
 }
 .hidden{
-	display:none;
+	visibility: hidden;
 }
 .announcement{
-	margin-bottom: 40px;
 	color: pink;
 	font-size: 1.5rem;
 	font-family: 'Staatliches', cursive;
 	letter-spacing: 2px;	
 }
 
-
-
-
-#container {
-	margin: 10px auto;
-	max-width: 75%;
-    display: flex;	
-	flex-flow: row wrap;
-
-}
-
 .outer-overlay {
   position: fixed; 
-  display: none; 
+  display: none;
   width: 100%; 
   height: 100%; 
   top: 0; 
@@ -73,36 +84,14 @@ border-radius: 4px;
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5); 
-  z-index: 2; 
 }	
-
-button{
-	padding: 5px;
-	border: none;
-	background: none;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	height: 100%;
-	font-weight: 600;
-	color: #4682b4;
-	transition: all 0.3s;
-	margin-bottom: 50px;
-}
-
-button:hover {
-	color: white;
-	background: #4682b4;
-	border-radius: 4px;	
-}
-
-
 	
 .overlay{ 
 display: none;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   place-items: center;
-  width: 400px; 
+  width: 500px; 
   height: 400px;  
   background-color: rgba(0,0,0,0.5);
 }
@@ -113,17 +102,6 @@ align-items: center;
 justify-items: center;
 }
 
-	  
-.overlay button.close{
-grid-column: 1;
-grid-row: 1;
-justify-self: end;
-align-self: start;
-transform: translateY(-85%);
-  background: none;
-	  border: 0;
-	  height: 25px;
-}
 .next, .back{
 grid-column: 1;
 grid-row: 1;
@@ -138,18 +116,66 @@ justify-self: start;
 grid-column: 1;
 grid-row: 1;
 width: 100%;
-height:  100%;
-background-image: cover;
-
-	
+height:  100%;	
 }
 .overlay button.back, .overlay button.next {
  border: 0;
  height: 30px;
  width: 30px;
  background: none;
-font-size: 1.5rem;
-	  
+font-size: 1.5rem;	  
 }
-	
+.overlay button.close{
+grid-column: 1;
+grid-row: 1;
+justify-self: end;
+align-self: start;
+transform: translateY(-85%);
+background: none;
+border: 0;
+height: 25px;
+}
+
+@media screen and (max-width: 800px) {
+.pics { 
+ width: 22%;
+}
+
+}
+
+@media screen and (max-width: 712px) {
+.overlay { 
+  width: 400px; 
+  height: 320px;
+}
+
+button{
+margin: 0;
+}
+}
+
+@media screen and (max-width: 550px) {
+.pics { 
+ width: 30%;
+}
+h1{
+font-size: 1.5rem;	
+}
+}
+@media screen and (max-width: 450px) {
+.overlay { 
+  width: 250px; 
+  height: 250px;
+}
+}
+@media screen and (max-width: 400px) {
+nav{
+display: flex;
+flex-direction: column;
+}
+#newgame{
+	order: 1;
+	color:red;
+}
+}	
 	
