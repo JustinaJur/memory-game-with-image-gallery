@@ -1,16 +1,23 @@
 var topics = {
-cinemas : ["neris", "wilno", "pergale", "vilnius", "spalis", "helios", 
-"neris", "wilno", "pergale", "vilnius", "spalis", "helios"],
-bridges : ["mindaugo", "pontoninis", "zaliasis", "antokol", "uzupio", "zveryno", "mindaugo", 
-"pontoninis", "zaliasis", "antokol", "uzupio", "zveryno"],
-restaurants : ["dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas", 
-"dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas"],
-transport : ["arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis", 
-"arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis"]
-}
+// cinemas : ["neris", "wilno", "pergale", "vilnius", "spalis", "helios", 
+// "neris", "wilno", "pergale", "vilnius", "spalis", "helios"],
+// bridges : ["mindaugo", "pontoninis", "zaliasis", "antokol", "uzupio", "zveryno", "mindaugo", 
+// "pontoninis", "zaliasis", "antokol", "uzupio", "zveryno"],
+// restaurants : ["dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas", 
+// "dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas"],
+// transport : ["arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis", 
+// "arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis"]
+// }
 
 // transport : ["arklinis", "autobusas", "arklinis", "autobusas" ]
-// }
+ transport : [
+           {name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925."},
+           {name: "autobusas", description: "first autobusas in vilnius"},            
+           {name:  "arklinis", description: "The horse drawn tram. Operated in 1893–1925."}, 
+           {name: "autobusas", description: "first autobusas in vilnius"}
+]
+
+}
 
 
 
@@ -34,8 +41,9 @@ for (var i = 0; i<buttons.length; i++){
 				redFlag.classList.remove("attention");
 				// get selected topic from topics object
 		        topic = topics[this.textContent];
-				reset();
-		        mixCards(topic);
+                topic.sort( () => Math.random() - 0.5); 
+                reset();
+		        // mixCards(topic);
 				play()
 	})}
 
@@ -45,13 +53,13 @@ for (var i = 0; i<buttons.length; i++){
 		  pics[i].addEventListener("click", function(){  
             // open clicked card if number of clicked cards is 0 and prevent opening of matched card 
 		   if(clickedCards.length == 0 && matchedCards.indexOf(this.id) == - 1){
-			  this.setAttribute("src", "images/" + topic[this.id] + ".jpg");
+			  this.setAttribute("src", "images/" + topic[this.id].name + ".jpg");
                // push to clickedCards arr
 			   clickedCards.push(this);
 			  }
             // open clicked card if number of clicked cards is 1, prevent opening of matched card and previously clicked
 		   if(clickedCards.length == 1 && matchedCards.indexOf(this.id) == - 1 && this.id !== clickedCards[0].id){
-			   this.setAttribute("src", "images/" + topic[this.id] + ".jpg");
+			   this.setAttribute("src", "images/" + topic[this.id].name + ".jpg");
 			   clickedCards.push(this);
 			 }
 			if(clickedCards.length == 2){compareCards(clickedCards[0], clickedCards[1]);
@@ -90,7 +98,7 @@ for (var i = 0; i<buttons.length; i++){
 		 setTimeout(function (){
 			 for(var i = 0; i<pics.length; i++){	
           //open large pictures	 
-		 pics[i].setAttribute("src", "lg/" + topic[i] + ".jpg")};
+		 pics[i].setAttribute("src", "lg/" + topic[i].name + ".jpg")};
 		 announcement.classList.remove("hidden");
 		 startGallery();
 		 }, 700); 
@@ -105,6 +113,7 @@ let overlayPic = document.querySelector(".overlay").getElementsByTagName("img")[
 const closeButton = document.querySelector(".overlay").querySelector(".close");
 const nextButton = document.querySelector(".overlay").querySelector(".next");
 const backButton = document.querySelector(".overlay").querySelector(".back");
+const description = document.querySelector(".description");
 
 
 //allow clicking on pictures after all cards are matched
@@ -127,6 +136,9 @@ function startGallery(){
 			;}
 			// show clicked picture on overlay
 			overlayPic.src = src;
+             // get description of the picture
+            description.innerText = topic[counter].description;
+            description.classList.add("open");
 			//hide gallery announcement 
 			announcement.classList.add("hidden");
 			    
@@ -134,16 +146,22 @@ function startGallery(){
 				nextButton.onclick = function() {
 				 // add 1 to id of current pic	
 			    counter++;
-				
+                
+			
 				// set counter to 0 when last pic is being displayed
-				if(counter === pics.length) {counter = 0}
+				if(counter === pics.length) {counter = 0};
+				 //update description
+				description.innerText = topic[counter].description;
 				// set currently viewed pic as overlay pic
 				overlayPic.src = pics[counter].src;
 			}
 	           // show previous pic
 			   backButton.onclick = function(){
 			   counter--;
-			   if(counter === -1) {counter = pics.length-1}
+          
+			   if(counter === -1) {counter = pics.length-1};
+			   //update description
+               description.innerText = topic[counter].description;
 			   overlayPic.src = pics[counter].src;
 			   
 		}
@@ -176,6 +194,9 @@ function mixCards(array){
         [array[i], array[rand]] = [array[rand], array[i]];
     }
 }
+
+
+
 
 function smallReset(){
 	setTimeout(function(){
