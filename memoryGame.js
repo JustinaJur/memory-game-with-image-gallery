@@ -1,39 +1,62 @@
-var topics = {
-// cinemas : ["neris", "wilno", "pergale", "vilnius", "spalis", "helios", 
-// "neris", "wilno", "pergale", "vilnius", "spalis", "helios"],
-// bridges : ["mindaugo", "pontoninis", "zaliasis", "antokol", "uzupio", "zveryno", "mindaugo", 
-// "pontoninis", "zaliasis", "antokol", "uzupio", "zveryno"],
-// restaurants : ["dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas", 
-// "dainava", "draugyste", "literatu", "medininkai", "neringa", "nykstukas"],
-// transport : ["arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis", 
-// "arklinis", "autobusas", "saurer", "katedra", "roges", "gelezinkelis"]
-// }
+let topics = {
+	// cinemas:[ 
+	          // {name: "neris", description: "The horse drawn tram. Operated in 1893–1925."},
+              // {name: "wilno", description: "first autobusas in vilnius"},  
+              // {name: "pergale", description: "karieta saurer"},  
+              // {name: "vilnius", description: "autobusas"},  
+              // {name: "spalis", description: "roges in winter"},  
+              // {name: "helios", description: "railway in year lalala"}
+// ],
+
+    // bridges:[ 
+	          // {name: "mindaugo", description: "The horse drawn tram. Operated in 1893–1925."},
+              // {name: "pontoninis", description: "first autobusas in vilnius"},  
+              // {name: "zaliasis", description: "karieta saurer"},  
+              // {name: "antokol", description: "autobusas"},  
+              // {name: "uzupio", description: "roges in winter"},  
+              // {name: "zveryno", description: "railway in year lalala"}
+// ],
+
+    // restaurants:[ 
+	          // {name: "dainava", description: "The horse drawn tram. Operated in 1893–1925."},
+              // {name: "draugyste", description: "first autobusas in vilnius"},  
+              // {name: "literatu", description: "karieta saurer"},  
+              // {name: "medininkai", description: "autobusas"},  
+              // {name: "neringa", description: "roges in winter"},  
+              // {name: "nykstukas", description: "railway in year lalala"}
+// ],
+	
+
 
 // transport : ["arklinis", "autobusas", "arklinis", "autobusas" ]
  transport : [
-           {name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925."},
-           {name: "autobusas", description: "first autobusas in vilnius"},            
-           {name:  "arklinis", description: "The horse drawn tram. Operated in 1893–1925."}, 
-           {name: "autobusas", description: "first autobusas in vilnius"}
+           // {name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925."},
+           // {name: "autobusas", description: "first autobusas in vilnius"},  
+           // {name: "saurer", description: "karieta saurer"},  
+           // {name: "katedra", description: "autobusas"},  
+           {name: "roges", description: "roges in winter"},  
+           {name: "gelezinkelis", description: "railway in year lalala"} 		   
 ]
 
 }
 
 
 
-var pics = document.querySelectorAll(".pics");
-var buttons = document.querySelectorAll(".topic");
-var container = document.querySelector("#container");
-var redFlag = document.querySelector(".redFlag");
-var announcement = document.querySelector(".announcement");
-var matchedCards = [];
-var clickedCards = [];
-var topic = [];
-var playing = false;
-var allowedGallery = false;
+let pics = document.querySelectorAll(".pics");
+let buttons = document.querySelectorAll(".topic");
+let container = document.querySelector("#container");
+let redFlag = document.querySelector(".redFlag");
+let announcement = document.querySelector(".announcement");
+let matchedCards = [];
+let clickedCards = [];
+// let topic = [];
+let playing = false;
+let allowedGallery = false;
 
+initialize();
 	
-for (var i = 0; i<buttons.length; i++){	
+function initialize (){	
+for (let i = 0; i<buttons.length; i++){	
         buttons[i].addEventListener("click", function(){	
 		        playing = true;
 			    allowedGallery = false;
@@ -41,15 +64,18 @@ for (var i = 0; i<buttons.length; i++){
 				redFlag.classList.remove("attention");
 				// get selected topic from topics object
 		        topic = topics[this.textContent];
-                topic.sort( () => Math.random() - 0.5); 
+				//double objects in topic array
+				topic = topic.concat(topic);
+				//mix order of objects in topic array
+                topic.sort(() => Math.random() - 0.5); 
                 reset();
-		        // mixCards(topic);
 				play()
 	})}
+}
 
 	   
 	   function play(){ 
-	   for (var i = 0; i < pics.length; i++){
+	   for (let i = 0; i < pics.length; i++){
 		  pics[i].addEventListener("click", function(){  
             // open clicked card if number of clicked cards is 0 and prevent opening of matched card 
 		   if(clickedCards.length == 0 && matchedCards.indexOf(this.id) == - 1){
@@ -96,7 +122,7 @@ for (var i = 0; i<buttons.length; i++){
     
 	 function openAllCards(topic){
 		 setTimeout(function (){
-			 for(var i = 0; i<pics.length; i++){	
+			 for(let i = 0; i<pics.length; i++){	
           //open large pictures	 
 		 pics[i].setAttribute("src", "lg/" + topic[i].name + ".jpg")};
 		 announcement.classList.remove("hidden");
@@ -107,13 +133,13 @@ for (var i = 0; i<buttons.length; i++){
 	 //////////////////////////////////////////////////////////////////////////////////
 	//// ********* start gallery after all cards are matched 
 
-const outerOverlay = document.querySelector(".outer-overlay");	
-const overlay = document.querySelector(".overlay");
+let outerOverlay = document.querySelector(".outer-overlay");	
+let overlay = document.querySelector(".overlay");
 let overlayPic = document.querySelector(".overlay").getElementsByTagName("img")[0];
-const closeButton = document.querySelector(".overlay").querySelector(".close");
-const nextButton = document.querySelector(".overlay").querySelector(".next");
-const backButton = document.querySelector(".overlay").querySelector(".back");
-const description = document.querySelector(".description");
+let closeButton = document.querySelector(".overlay").querySelector(".close");
+let nextButton = document.querySelector(".overlay").querySelector(".next");
+let backButton = document.querySelector(".overlay").querySelector(".back");
+let description = document.querySelector(".description");
 
 
 //allow clicking on pictures after all cards are matched
@@ -146,8 +172,6 @@ function startGallery(){
 				nextButton.onclick = function() {
 				 // add 1 to id of current pic	
 			    counter++;
-                
-			
 				// set counter to 0 when last pic is being displayed
 				if(counter === pics.length) {counter = 0};
 				 //update description
@@ -158,7 +182,6 @@ function startGallery(){
 	           // show previous pic
 			   backButton.onclick = function(){
 			   counter--;
-          
 			   if(counter === -1) {counter = pics.length-1};
 			   //update description
                description.innerText = topic[counter].description;
@@ -187,16 +210,6 @@ function reset(){
 	matchedCards = [];
 	clickedCards = [];
 }
-
-function mixCards(array){
-    for (var i = array.length - 1; i > 0; i--) {
-        var rand = Math.floor(Math.random() * (i + 1));
-        [array[i], array[rand]] = [array[rand], array[i]];
-    }
-}
-
-
-
 
 function smallReset(){
 	setTimeout(function(){
