@@ -1,4 +1,4 @@
-memory game with image gallery about the city of Vilnius
+#memory game with image gallery about the city of Vilnius
 
 
 ABOUT THE GAME (GOAL and RULES)
