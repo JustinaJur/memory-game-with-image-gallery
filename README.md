@@ -17,6 +17,8 @@ At any time of the game a player is able to start the game from the begining or 
 
 ![alt text](https://raw.githubusercontent.com/justinajur/memory-game-with-image-gallery/branch/path/to/saurer.jpg)
 
+![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/antokol.jpg)
+
 
 
 
