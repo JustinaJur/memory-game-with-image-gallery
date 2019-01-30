@@ -1,39 +1,36 @@
 let topics = {
-	// cinemas:[ 
-	          // {name: "neris", description: "The horse drawn tram. Operated in 1893–1925."},
-              // {name: "wilno", description: "first autobusas in vilnius"},  
-              // {name: "pergale", description: "karieta saurer"},  
-              // {name: "vilnius", description: "autobusas"},  
-              // {name: "spalis", description: "roges in winter"},  
-              // {name: "helios", description: "railway in year lalala"}
-// ],
+	cinemas:[ 
+	          {name: "neris", description: "The horse drawn tram. Operated in 1893–1925."},
+              {name: "wilno", description: "first autobusas in vilnius"},  
+              {name: "pergale", description: "karieta saurer"},  
+              {name: "vilnius", description: "autobusas"},  
+              {name: "spalis", description: "roges in winter"},  
+              {name: "helios", description: "railway in year lalala"}
+],
 
-    // bridges:[ 
-	          // {name: "mindaugo", description: "The horse drawn tram. Operated in 1893–1925."},
-              // {name: "pontoninis", description: "first autobusas in vilnius"},  
-              // {name: "zaliasis", description: "karieta saurer"},  
-              // {name: "antokol", description: "autobusas"},  
-              // {name: "uzupio", description: "roges in winter"},  
-              // {name: "zveryno", description: "railway in year lalala"}
-// ],
+    bridges:[ 
+	          {name: "mindaugo", description: "The horse drawn tram. Operated in 1893–1925."},
+              {name: "pontoninis", description: "first autobusas in vilnius"},  
+              {name: "zaliasis", description: "karieta saurer"},  
+              {name: "antokol", description: "autobusas"},  
+              {name: "uzupio", description: "roges in winter"},  
+              {name: "zveryno", description: "railway in year lalala"}
+],
 
-    // restaurants:[ 
-	          // {name: "dainava", description: "The horse drawn tram. Operated in 1893–1925."},
-              // {name: "draugyste", description: "first autobusas in vilnius"},  
-              // {name: "literatu", description: "karieta saurer"},  
-              // {name: "medininkai", description: "autobusas"},  
-              // {name: "neringa", description: "roges in winter"},  
-              // {name: "nykstukas", description: "railway in year lalala"}
-// ],
-	
+    restaurants:[ 
+	          {name: "dainava", description: "The horse drawn tram. Operated in 1893–1925."},
+              {name: "draugyste", description: "first autobusas in vilnius"},  
+              {name: "literatu", description: "karieta saurer"},  
+              {name: "medininkai", description: "autobusas"},  
+              {name: "neringa", description: "roges in winter"},  
+              {name: "nykstukas", description: "railway in year lalala"}
+],
 
-
-// transport : ["arklinis", "autobusas", "arklinis", "autobusas" ]
  transport : [
-           // {name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925."},
-           // {name: "autobusas", description: "first autobusas in vilnius"},  
-           // {name: "saurer", description: "karieta saurer"},  
-           // {name: "katedra", description: "autobusas"},  
+           {name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925."},
+           {name: "autobusas", description: "first autobusas in vilnius"},  
+           {name: "saurer", description: "karieta saurer"},  
+           {name: "katedra", description: "autobusas"},  
            {name: "roges", description: "roges in winter"},  
            {name: "gelezinkelis", description: "railway in year lalala"} 		   
 ]
@@ -224,6 +221,3 @@ container.onclick = function(){
 		redFlag.classList.remove("attention");
 	}
 };
-
-
-
