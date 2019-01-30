@@ -16,9 +16,9 @@ A short description is displayed under the clicked picture.
 At any time of the game a player is able to start the game from the begining or change a topic. 
 
 
-![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general.jpg)
+![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general.png)
 
-![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general2.jpg)
+![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general2.png)
 
 
 
