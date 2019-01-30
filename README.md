@@ -16,7 +16,7 @@ A short description is displayed under the clicked picture.
 At any time of the game a player is able to start the game from the begining or change a topic. 
 
 
-In the middle of the game:
+During the playing:
 
 ![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general.png)
 
@@ -24,6 +24,12 @@ In the middle of the game:
 Image gallery: 
 
 ![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general2.png)
+
+INSTALLING:
+
+The project runs locally. You should download all files and open memoryGame.html file in a browser.
+
+
 
 
 
