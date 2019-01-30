@@ -15,7 +15,7 @@ A short description is displayed under a picture.
 
 At any time of the game a player is able to start the game from the begining or change a topic. 
 
-![alt text](http://url/to/general.png)
+![alt text](https://raw.githubusercontent.com/justinajur/memory-game-with-image-gallery/branch/path/to/general.png)
 
 
 
