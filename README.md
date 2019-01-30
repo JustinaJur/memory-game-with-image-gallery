@@ -1,5 +1,3 @@
-# memory-game-with-image-gallery 
-
 memory game with image gallery about the city of Vilnius
 
 
