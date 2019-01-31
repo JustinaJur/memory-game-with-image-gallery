@@ -9,12 +9,31 @@ const topics = {
     ],
 
     bridges: [
-        { name: "mindaugo", description: "The horse drawn tram. Operated in 1893–1925." },
-        { name: "pontoninis", description: "first autobusas in vilnius" },
-        { name: "zaliasis", description: "karieta saurer" },
-        { name: "antokol", description: "autobusas" },
-        { name: "uzupio", description: "roges in winter" },
-        { name: "zveryno", description: "railway in year lalala" }
+        {
+            name: "mindaugo", description: "A ferry at the current location of Mindaugas bridge. Year 1960-1965.",
+            source: "http://www.grumlinas.lt/?p=16362"
+        },
+        {
+            name: "pontoninis",
+            description: "Pontoon bridge over Neris river close to the current location of Mindaugas bridge. On the picture: people walking to song festival at 'Žalgiris' stadium in 1950.",
+            source: "https://lt.wikipedia.org/wiki/Pontoninis_tiltas_Vilniuje"
+        },
+        {
+            name: "zaliasis", description: "Green Bridge at the end of 19th century.",
+            source: "http://www.gidas.mb.vu.lt/2009/04/27/zaliojo-tilto-nuotrauka/"
+        },
+        {
+            name: "antokol", description: "View to the upper castle of Vilnius from Antakalnis street.",
+            source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-tiltai-ir-tilteliai.html"
+        },
+        {
+            name: "uzupio", description: "Bridge in Užupis.",
+            source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-tiltai-ir-tilteliai.html"
+        },
+        {
+            name: "zveryno", description: "Opening of Žvėrynas bridge in 1907.",
+            source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-tiltai-ir-tilteliai.html"
+        }
     ],
 
     restaurants: [
@@ -27,12 +46,30 @@ const topics = {
     ],
 
     transport: [
-        { name: "arklinis", description: "The horse drawn tram. Operated in 1893–1925." },
-        { name: "autobusas", description: "first autobusas in vilnius" },
-        { name: "saurer", description: "karieta saurer" },
-        { name: "katedra", description: "autobusas" },
-        { name: "roges", description: "roges in winter" },
-        { name: "gelezinkelis", description: "railway in year lalala" }
+        {
+            name: "arklinis", description: "The horse-drawn tram. Operated in 1893–1925.",
+            source: "https://lt.wikipedia.org/wiki/Vilniaus_arklinis_tramvajus"
+        },
+        {
+            name: "autobusas", description: "Bus of interwar Vilnius. Route: Municipality square - Jeruzalė - Verkiai.",
+            source: "https://judumas.vilnius.lt/informacija/1905-m-1937-m/"
+        },
+        {
+            name: "saurer", description: "Driver and conductors standing by a bus 'Saurer'. Year 1936-1937.",
+            source: "https://judumas.vilnius.lt/informacija/1905-m-1937-m/"
+        },
+        {
+            name: "katedra", description: "Cathedral Square by Antanas Sutkus.",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/vilniaus-viesojo-transporto-istorija/i/"
+        },
+        {
+            name: "roges", description: "Carriers at Cathedral Square. Picture by S. F. Fleury from year 1863.",
+            source: "https://madeinvilnius.lt/vilniaus-istorija/vilniaus-miesto-studija/vilniaus-viesojo-transporto-istorija/"
+        },
+        {
+            name: "gelezinkelis", description: "Railway station in year 1910.",
+            source: "http://vilnius21.lt/senivaizdai.php?id=87636I7&t=3"
+        }
     ]
 
 }
@@ -133,7 +170,7 @@ const outerOverlay = document.querySelector(".outer-overlay");
 const overlay = document.querySelector(".overlay");
 const overlayPic = document.querySelector(".overlay").getElementsByTagName("img")[0];
 const closeButton = document.querySelector(".overlay").querySelector(".close");
-const nextButton = document.querySelector(".overlay").querySelector(".next");
+let nextButton = document.querySelector(".overlay").querySelector(".next");
 const backButton = document.querySelector(".overlay").querySelector(".back");
 const description = document.querySelector(".description");
 
