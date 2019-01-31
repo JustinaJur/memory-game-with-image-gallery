@@ -15,9 +15,21 @@ A short description is displayed under the clicked picture.
 
 At any time of the game a player is able to start the game from the begining or change a topic. 
 
-![alt text](https://raw.githubusercontent.com/justinajur/memory-game-with-image-gallery/branch/path/to/saurer.jpg)
 
-![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/antokol.jpg)
+During the playing:
+
+![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general.png)
+
+
+Image gallery: 
+
+![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general2.png)
+
+INSTALLING:
+
+The project runs locally. You should download all files and open memoryGame.html file in a browser.
+
+
 
 
 
