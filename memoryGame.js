@@ -1,11 +1,29 @@
-const topics = {
+let topics = {
     cinemas: [
-        { name: "neris", description: "The horse drawn tram. Operated in 1893–1925." },
-        { name: "wilno", description: "first autobusas in vilnius" },
-        { name: "pergale", description: "karieta saurer" },
-        { name: "vilnius", description: "autobusas" },
-        { name: "spalis", description: "roges in winter" },
-        { name: "helios", description: "railway in year lalala" }
+        {
+            name: "neris", description: "Cinema 'Neris' in Antakalnio str. 37 in 1953.",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/luni-kelione-vilniaus-kino-teatrai-19051985-metais/i/?fb_comment_id=632386636888408_635412993252439"
+        },
+        {
+            name: "maskva", description: "Cinema 'Maskva' in Didžioji str. 33 (prev. Gorskio str. 57) in 1968.",
+            source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-teatrai.-vilniaus-h5dy.html"
+        },
+        {
+            name: "pergale", description: "Cinema 'Pergalė' in Pamėnkalnio str. 7/8 (prev. Gargarino str. 8/11) in 1951.",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/luni-kelione-vilniaus-kino-teatrai-19051985-metais/i/?fb_comment_id=632386636888408_635412993252439"
+        },
+        {
+            name: "vilnius", description: "Cinema 'Vilnius' in Gedimino pr. 5 (prev. Lenino pr. 5) in 1963.",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/luni-kelione-vilniaus-kino-teatrai-19051985-metais/i/?fb_comment_id=632386636888408_635412993252439"
+        },
+        {
+            name: "spalis", description: "Cinema 'Spalis' in Didžioji str. 18 (prev. M. Gorkio str.60).",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/luni-kelione-vilniaus-kino-teatrai-19051985-metais/i/?fb_comment_id=632386636888408_635412993252439"
+        },
+        {
+            name: "helios", description: "Cinema 'Helios' in Vaduvos str. 4a in 1956.",
+            source: "http://www.madeinvilnius.com/lt/vilniaus-miesto-studija/luni-kelione-vilniaus-kino-teatrai-19051985-metais/i/?fb_comment_id=632386636888408_635412993252439"
+        }
     ],
 
     bridges: [
@@ -30,19 +48,35 @@ const topics = {
             name: "uzupio", description: "Bridge in Užupis.",
             source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-tiltai-ir-tilteliai.html"
         },
-        {
+		{
             name: "zveryno", description: "Opening of Žvėrynas bridge in 1907.",
             source: "http://www.archyvai.lt/lt/vaa_virtualios-parodos/lietuvos-tiltai-ir-tilteliai.html"
         }
+
     ],
 
     restaurants: [
-        { name: "dainava", description: "The horse drawn tram. Operated in 1893–1925." },
-        { name: "draugyste", description: "first autobusas in vilnius" },
-        { name: "literatu", description: "karieta saurer" },
-        { name: "medininkai", description: "autobusas" },
-        { name: "neringa", description: "roges in winter" },
-        { name: "nykstukas", description: "railway in year lalala" }
+        {
+            name: "dainava", description: "'Dainava' restaurant in Vienuolio str.",
+            source: "https://madeinvilnius.lt/vilniaus-istorija/senasis-vilnius/sentimentus-keliantis-restoranas-dainava/"
+        },
+        {
+            name: "zuvedra", description: "Cafe 'Žuvėdra' in Vilniaus str. 21 (prev. L. Giros 21/8) in 1979.",
+            source: "https://www.lzinios.lt/Prie-kavos/sovietinio-vilniaus-linksmumai-bufetai-alkoholis-is-automatu-bohemiskos-kavines/268997"
+        },
+        { name: "literatu", description: "Cafe 'Literatų svetainė'. A chair.", source: "http://www.bernardinai.lt/straipsnis/2018-06-30-vilniaus-restoranai-ir-kavines-sovietmeciu/170624" },
+        {
+            name: "medininkai", description: "Design of interior of the restaurant 'Medininkai'. Year 1979.",
+            source: "http://www.bernardinai.lt/straipsnis/2018-06-30-vilniaus-restoranai-ir-kavines-sovietmeciu/170624"
+        },
+        {
+            name: "neringa", description: "Cafe 'Neringa'.",
+            source: "https://www.delfi.lt/news/ringas/lit/kur-sovietmeciu-buvo-galima-gauti-ersketo-su-majonezu.d?id=66599026"
+        },
+        {
+            name: "nykstukas", description: "Children cafe 'Nykštukas' in Pamėnkalnio str. 14 (prev. P. Cvirkos str. 14).",
+            source: "https://www.google.lt/url?sa=i&source=images&cd=&ved=2ahUKEwj67cyMy6rgAhVBECwKHRmiCkUQjhx6BAgBEAM&url=https%3A%2F%2Fmadeinvilnius.lt%2Fvilniaus-istorija%2Fneatrastas-vilnius%2Fneatrastas-vilnius-vaiku-kavine-nykstukas%2F&psig=AOvVaw186Wi9RjRXyyKAlEYFCDsy&ust=1549662021616330"
+        }
     ],
 
     transport: [
@@ -78,7 +112,7 @@ let pics = document.querySelectorAll(".pics");
 let buttons = document.querySelectorAll(".topic");
 const container = document.querySelector("#container");
 const redFlag = document.querySelector(".redFlag");
-const announcement = document.querySelector(".announcement");
+let announcement = document.querySelector(".announcement");
 let matchedCards = [];
 let clickedCards = [];
 let playing = false;
@@ -86,7 +120,7 @@ let allowedGallery = false;
 
 initialize();
 
-function initialize() {
+  function initialize (){
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function () {
             playing = true;
@@ -106,9 +140,9 @@ function initialize() {
 }
 
 
-function play() {
+ play =() => {
     for (let i = 0; i < pics.length; i++) {
-        pics[i].addEventListener("click", function () {
+        pics[i].addEventListener("click",  function () {
             // open clicked card if number of clicked cards is 0 and prevent opening of matched card 
             if (clickedCards.length == 0 && matchedCards.indexOf(this.id) == - 1) {
                 this.setAttribute("src", "images/" + topic[this.id].name + ".jpg");
@@ -128,14 +162,14 @@ function play() {
 };
 
 // compare and count clicked cards
-function compareCards(first, second) {
+ compareCards = (first, second) => {
     if (first.src === second.src) {
         //if two clicked cards are not in matchedCards array, push them there 
         if (matchedCards.every(item => item !== first.id && item !== second.id)) {
             matchedCards.push(first.id);
             matchedCards.push(second.id);
         }
-        setTimeout(function () {
+        setTimeout(() => {
             first.setAttribute("src", "images/" + "black.jpg")
             second.setAttribute("src", "images/" + "black.jpg");
         }, 500);
@@ -146,7 +180,7 @@ function compareCards(first, second) {
         smallReset();
     } else {
         //if 2 opened cards are not equal, close them
-        setTimeout(function () {
+        setTimeout(()=> {
             first.setAttribute("src", "images/" + "white.jpg");
             second.setAttribute("src", "images/" + "white.jpg")
         }, 500);
@@ -154,8 +188,8 @@ function compareCards(first, second) {
     }
 }
 
-function openAllCards(topic) {
-    setTimeout(function () {
+ openAllCards = topic => {
+    setTimeout(() =>{
         for (let i = 0; i < pics.length; i++) {
             //open large pictures	 
             pics[i].setAttribute("src", "lg/" + topic[i].name + ".jpg")
@@ -171,17 +205,17 @@ const overlay = document.querySelector(".overlay");
 const overlayPic = document.querySelector(".overlay").getElementsByTagName("img")[0];
 const closeButton = document.querySelector(".overlay").querySelector(".close");
 let nextButton = document.querySelector(".overlay").querySelector(".next");
-const backButton = document.querySelector(".overlay").querySelector(".back");
-const description = document.querySelector(".description");
+let backButton = document.querySelector(".overlay").querySelector(".back");
+let description = document.querySelector(".description");
 
 //allow clicking on pictures after all cards are matched
-function startGallery() {
+startGallery = () =>{
     pics.forEach(item => item.addEventListener("click", showPicture))
     allowedGallery = true;
 }
 
 // show pics of the gallery 
-function showPicture(e) {
+ showPicture = e => {
     //get id of clicked pic
     let counter = e.target.id;
     // get source of clicked pic
@@ -198,9 +232,8 @@ function showPicture(e) {
     description.classList.add("open");
     //hide gallery announcement 
     announcement.classList.add("hidden");
-
     //show next pic
-    nextButton.onclick = function () {
+    nextButton.onclick = () => {
         // add 1 to id of current pic	
         counter++;
         // set counter to 0 when last pic is  displayed
@@ -210,8 +243,9 @@ function showPicture(e) {
         // set currently viewed pic as overlay pic
         overlayPic.src = pics[counter].src;
     }
+	
     // show previous pic
-    backButton.onclick = function () {
+    backButton.onclick = () => {
         counter--;
         if (counter === -1) { counter = pics.length - 1 };
         //update description
@@ -222,13 +256,14 @@ function showPicture(e) {
 
 //close gallery
 closeButton.addEventListener("click", close);
-function close() {
+
+ close = () => {
     overlay.classList.remove("open");
     outerOverlay.classList.remove("open");
 }
 ///// gallery ends
 
-function reset() {
+ reset = () => {
     pics = Array.from(pics);// return arr
     pics.map(item => item.setAttribute("src", "images/white.jpg"));
     allowedGallery = false;
@@ -236,13 +271,13 @@ function reset() {
     clickedCards = [];
 }
 
-function smallReset() {
-    setTimeout(function () {
+smallReset = () => {
+    setTimeout( () => {
         clickedCards = [];
     }, 500);
 };
 
-container.onclick = function () {
+container.onclick = () => {
     if (!playing) {
         redFlag.classList.add("attention");
     } else {
