@@ -255,12 +255,12 @@ startGallery = () =>{
 }
 
 //close gallery
-closeButton.addEventListener("click", close);
+ closeButton.onclick = () => {
+	 overlay.classList.remove("open");
+     outerOverlay.classList.remove("open"); 
+ }
+ 
 
- close = () => {
-    overlay.classList.remove("open");
-    outerOverlay.classList.remove("open");
-}
 ///// gallery ends
 
  reset = () => {
