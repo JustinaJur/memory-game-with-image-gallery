@@ -1,6 +1,6 @@
-## Memory game with image gallery about the city of Vilnius (pure JavaScript)
+# Memory game with image gallery about the city of Vilnius (pure JavaScript)
 
-# About the game (rules and goals)
+## About the game (rules and goals)
 
 It is a card game which begins with all cards being closed. At every turn a player opens two cards and closes them if they don't 
 match (are not identical). 
