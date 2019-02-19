@@ -27,7 +27,6 @@ Image gallery:
 
 ## Technologies
 Project is made with:
-
 Vanilla JavaScript,  
 HTML,
 CSS 
