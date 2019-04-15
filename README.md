@@ -1,7 +1,6 @@
-#memory game with image gallery about the city of Vilnius
+# Memory game with image gallery about the city of Vilnius (pure JavaScript)
 
-
-ABOUT THE GAME (GOAL and RULES)
+## About the game (rules and goals)
 
 It is a card game which begins with all cards being closed. At every turn a player opens two cards and closes them if they don't 
 match (are not identical). 
@@ -25,9 +24,22 @@ Image gallery:
 
 ![alt text](https://github.com/JustinaJur/memory-game-with-image-gallery/blob/master/images/general2.png)
 
-INSTALLING:
 
-The project runs locally. You should download all files and open memoryGame.html file in a browser.
+## Technologies
+Project is made with:
+Vanilla JavaScript,  
+HTML,
+CSS 
+
+
+## Setup
+To run this project, open HTML file in browser.
+Live at heroku:
+https://fast-bastion-34530.herokuapp.com/
+
+
+
+
 
 
 
