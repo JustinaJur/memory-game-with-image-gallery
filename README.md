@@ -35,7 +35,7 @@ CSS
 ## Setup
 To run this project, open HTML file in browser.
 Live at heroku:
-https://fast-bastion-34530.herokuapp.com/
+https://memory-game-fast-bastion.herokuapp.com/
 
 
 
